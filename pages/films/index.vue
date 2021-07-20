@@ -1,17 +1,17 @@
 <template>
-<div>
-  <film v-for="film in films" :key="film.name"
-  :file="film.file" :name="film.name" :production_year="film.production_year"></film>
-</div>
+  <div>
+    <Film v-for="film in films" :key="film.id"
+          :id="film.id" :file="film.file" :name="film.name" :production_year="film.production_year"></Film>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
-import film from '../components/film';
+import Film from "../../components/Film";
 
 export default {
   components: {
-    film
+    Film
   },
 
   data: () => ({
@@ -20,8 +20,8 @@ export default {
 
   async created() {
     const config = {
-      headers : {
-        'Accept' : 'application/json'
+      headers: {
+        'Accept': 'application/json'
       }
     }
 
@@ -29,7 +29,7 @@ export default {
       const res = await axios.get('http://localhost:1373/api/tag?tag=a', config)
       console.log(res.data)
       this.films = res.data
-    }catch (err) {
+    } catch (err) {
       console.log(err)
     }
   },
