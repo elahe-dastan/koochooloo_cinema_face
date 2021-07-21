@@ -1,17 +1,17 @@
 <template>
   <div>
-    <User v-on:signup="signup"></User>
+    <Signup v-on:signup="signup"></Signup>
   </div>
 </template>
 
 <script>
-import User from "../components/User";
+import Signup from "../components/Signup";
 import axios from "axios";
 
 export default {
   name: "signup",
   components: {
-    User
+    Signup
   },
   methods: {
     async signup(username, password,first_name,last_name,email,phone, national_number) {
