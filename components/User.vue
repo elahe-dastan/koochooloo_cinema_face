@@ -1,14 +1,67 @@
 <template>
-  <form @submit.prevent="OnSubmit">
-    <input type="text" v-model="username" placeholder="username">
-    <input type="text" v-model="password" placeholder="password">
-    <input type="text" v-model="first_name" placeholder="first name">
-    <input type="text" v-model="last_name" placeholder="last name">
-    <input type="text" v-model="email" placeholder="email">
-    <input type="text" v-model="phone" placeholder="phone">
-    <input type="text" v-model="national_number" placeholder="national number">
-    <input type="submit" value="submit">
-  </form>
+  <v-form  @submit.prevent="OnSubmit">
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field v-model="username" label="Username"></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field v-model="password" label="Password"></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field v-model="email" label="Email"></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field v-model="first_name" label="First Name"></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field v-model="last_name" label="Last Name"></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field v-model="phone" label="Phone"></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field v-model="national_number" label="National Code" :counter=10></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-btn
+            color="success"
+            type="submit"
+          >
+            Submit
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
 </template>
 
 <script>
