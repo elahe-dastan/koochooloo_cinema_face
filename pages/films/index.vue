@@ -26,7 +26,7 @@ export default {
     }
 
     try {
-      const res = await axios.get('http://localhost:1373/api/tag?tag=a', config)
+      const res = await axios.get('http://localhost:1373/api/film', config)
       console.log(res.data)
       this.films = res.data
     } catch (err) {
